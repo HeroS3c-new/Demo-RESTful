@@ -9,8 +9,8 @@ API_URL = 'http://localhost:5000'
 def connection_error():
     root = tk.Tk()
     root.title('Errore')
-    root.geometry('400x200')
-    tk.Label(root, text='Server non attivo').pack()
+    root.geometry('200x50')
+    tk.Label(root, text='Server non attivo', font=font.Font(size=12)).pack()
     tk.Frame(root).pack()
     root.mainloop()
     
@@ -30,13 +30,19 @@ def populate_corsi_listbox(corsi_listbox):
         corsi_listbox.insert(tk.END, f"{corso['id']} - {corso['nome']} ({corso['dipartimento']})")
 
 def create_corso(nome, dipartimento):
-    nuovo_corso = {'nome': nome, 'dipartimento': dipartimento}
-    response = requests.post(f'{API_URL}/corsi', json=nuovo_corso)
+    try:
+        nuovo_corso = {'nome': nome, 'dipartimento': dipartimento}
+        response = requests.post(f'{API_URL}/corsi', json=nuovo_corso)
+    except:
+        connection_error()
     return response.json()
 
 def delete_corso(corso_id, corsi_listbox):
-    response = requests.delete(f'{API_URL}/corsi/{corso_id.get()}')
-    populate_corsi_listbox(corsi_listbox)
+    try:
+        response = requests.delete(f'{API_URL}/corsi/{corso_id.get()}')
+        populate_corsi_listbox(corsi_listbox)
+    except:
+        connection_error()
     return response.status_code
 
 def on_create_corso_button_click(nome_entry, dipartimento_entry, corsi_listbox):
