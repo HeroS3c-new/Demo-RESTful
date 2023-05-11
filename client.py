@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import font
 import requests
 
 API_URL = 'http://localhost:5000'
@@ -49,7 +50,7 @@ def create_gui():
     root.title('API REST - Università degli Studi di Perugia (Unipg)')
     root.geometry('800x600')
 
-    corsi_label = tk.Label(root, text='Corsi:')
+    corsi_label = tk.Label(root, text='Corsi:', font=font.Font(size=20))
     corsi_label.pack()
 
     corsi_listbox = tk.Listbox(root)
