@@ -73,7 +73,7 @@ def create_gui():
     nome_entry = tk.Entry(create_corso_frame)
     nome_entry.grid(row=0, column=1)
 
-    dipartimento_label = tk.Label(create_corso_frame, text='Facoltà:')
+    dipartimento_label = tk.Label(create_corso_frame, text='Dipartimento:')
     dipartimento_label.grid(row=1, column=0)
 
     dipartimento_entry = tk.Entry(create_corso_frame)
