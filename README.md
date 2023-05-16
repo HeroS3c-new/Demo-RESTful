@@ -84,10 +84,7 @@ python server.py
 servers:
 - url: {url_qui}
 ```
-e decommenta questa riga nel file **`server.py`**
-```python
-#update_openapi_file('definizione_openapi.yaml', public_url)
-```
+
 ## Documentazione interattiva:
 
 ```bash
