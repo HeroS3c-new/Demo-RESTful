@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from pyngrok import ngrok
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -44,5 +46,10 @@ def delete_corso(corso_id):
     corsi.remove(corso)
     return '', 204
 
+public_url = ngrok.connect(5000)
+
+print(f"Public URL: {public_url}")
+
 if __name__ == '__main__':
     app.run()
+    
