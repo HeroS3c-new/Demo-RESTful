@@ -30,38 +30,35 @@ Questa demo è composta da:
 
 1.  **Node.js**:
     
-    *   Vai al sito web ufficiale di Node.js ([https://nodejs.org](https://nodejs.org)) utilizzando il tuo browser.
+    *   Vai al sito web ufficiale di Node.js ([https://nodejs.org](https://nodejs.org)).
     *   Scarica il programma di installazione di Node.js per Windows.
-    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione di Node.js.
+    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione.
 2.  **Python**:
     
-    *   Vai al sito web ufficiale di Python ([https://www.python.org](https://www.python.org)) utilizzando il tuo browser.
+    *   Vai al sito web ufficiale di Python ([https://www.python.org](https://www.python.org)).
     *   Scarica il programma di installazione di Python per Windows.
-    *   Esegui il programma di installazione e assicurati di selezionare l'opzione "Aggiungi Python al percorso di sistema" durante l'installazione per rendere Python accessibile da qualsiasi posizione nel tuo sistema.
+    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione
 3.  **Gestori dei pacchetti**:
     
-    *   npm (già incluso nell'installazione di Node.js) viene installato automaticamente durante l'installazione di Node.js su Windows.
-    *   pip viene installato automaticamente insieme a Python durante l'installazione su Windows.
+    *   npm (già incluso nell'installazione di Node.js)
+    *   pip (già incluso nell'installazione di Python)
 
 ### Mac:
 
 1.  **Node.js**:
     
-    *   Vai al sito web ufficiale di Node.js ([https://nodejs.org](https://nodejs.org)) utilizzando il tuo browser.
+    *   Vai al sito web ufficiale di Node.js ([https://nodejs.org](https://nodejs.org)).
     *   Scarica il programma di installazione di Node.js per macOS.
-    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione di Node.js.
+    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazion.
 2.  **Python**:
     
     *   Vai al sito web ufficiale di Python ([https://www.python.org](https://www.python.org)) utilizzando il tuo browser.
     *   Scarica il programma di installazione di Python per macOS.
-    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione di Python.
+    *   Esegui il programma di installazione e segui le istruzioni visualizzate sullo schermo per completare l'installazione.
 3.  **Gestori dei pacchetti**:
     
-    *   npm (già incluso nell'installazione di Node.js) viene installato automaticamente durante l'installazione di Node.js su macOS.
-    *   pip viene installato automaticamente insieme a Python durante l'installazione su macOS.
-
-Assicurati di verificare la documentazione ufficiale di Node.js e Python per ulteriori informazioni sulle versioni specifiche e le istruzioni di installazione più aggiornate.
-
+    *   npm (già incluso nell'installazione di Node.js).
+    *   pip (già incluso nell'installazione di Python)
 
 
 ### Dipendenze:
