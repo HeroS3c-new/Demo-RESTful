@@ -6,7 +6,7 @@ Questa demo è composta da:
 
 - Server dell’API: server.py
 - Documentazione interattiva: documentazione.js
-- 3 Interfacce client per mostrare l’uso dell’API in un ambiente reale: /app (client swagger), index.html, client.py
+- 3 Interfacce client per mostrare l’uso dell’API in un ambiente reale: /app (client swagger), client.py (client grafico), index.html (client web)
 
 # Setup:
 
