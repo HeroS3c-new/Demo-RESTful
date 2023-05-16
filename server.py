@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from pyngrok import ngrok
-import os
+import yaml
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 corsi = [
     {'id': 1, 'nome': 'Informatica', 'dipartimento': 'Matematica e informatica'},
@@ -46,8 +46,19 @@ def delete_corso(corso_id):
     corsi.remove(corso)
     return '', 204
 
-public_url = ngrok.connect(5000)
 
+def update_openapi_file(file_path, public_url):
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+
+    for server in data['servers']:
+        server['url'] = public_url.public_url
+
+    with open(file_path, 'w') as file:
+        yaml.dump(data, file)
+
+public_url = ngrok.connect(5000)
+#update_openapi_file('definizione_openapi.yaml', public_url)
 print(f"Public URL: {public_url}")
 
 if __name__ == '__main__':
