@@ -12,8 +12,6 @@ Questa demo è composta da:
 ### Prerequisiti:
 È necessario avere installati Node.js, Python e i relativi gestori dei pacchetti (npm, pip).
 
-Ecco come installare Node.js, Python e i relativi gestori dei pacchetti su Linux, Windows e Mac:
-
 #### Linux:
 
 1.  **Node.js**:
