@@ -16,24 +16,15 @@ Questa demo è composta da:
 
 #### Ubuntu / Debian:
 
-*   Node.js: `sudo apt install nodejs`
-*   Python: `sudo apt install python3`
-*   npm: `sudo apt install npm`
-*   pip: `sudo apt install python3-pip`
+*   `sudo apt install nodejs python3 npm python3-pip`
 
 #### Fedora / CentOS:
 
-*   Node.js: `sudo dnf install nodejs`
-*   Python: `sudo dnf install python3`
-*   npm: `sudo dnf install npm`
-*   pip: `sudo dnf install python3-pip`
+*   `sudo dnf install nodejs python3 npm python3-pip`
 
 #### Arch Linux:
 
-*   Node.js: `sudo pacman -S nodejs`
-*   Python: `sudo pacman -S python`
-*   npm: `sudo pacman -S npm`
-*   pip: `sudo pacman -S python-pip`
+*   `sudo pacman -S nodejs python3 npm python3-pip`
 
 ### Windows:
 
