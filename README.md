@@ -12,7 +12,7 @@ Questa demo è composta da:
 ### Prerequisiti:
 È necessario avere installati Node.js, Python e i relativi gestori dei pacchetti (npm, pip).
 
-#### Linux:
+#### GNU/Linux:
 
 1.  **Node.js**:
     
