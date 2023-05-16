@@ -16,7 +16,8 @@ RUN npm install express swagger-ui-express yamljs
 COPY server.py /app/server.py
 
 # Installa le dipendenze necessarie per il file server.py
-RUN pip install flask flask_cors pyngrok
+RUN apt-get update && apt-get install -y python3-pip
+RUN pip3 install flask flask_cors pyngrok
 
 # Esponi la porta 80 per il server Express
 EXPOSE 80
