@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: "Flask REST API"
+  description: "An API about course and notes"
+  version: "1.0.0"
+
+servers: 
+  - url: "/api" 
+
+components:
+  schemas:
+    Courses:
+      type: "object"
+      required:
+        - name_course
+      properties:
+        name_course:
+          type: "string"
+        number_of_credits:
+          type: "number"
+  parameters: 
+    name_course:
+      name: "name_course"
+      description: "Course of to get "
+      in: path
+      required: True
+      schema:
+        type: "string"
+
+paths:
+  /Courses:
+    get:
+      operationId: "courses.read_all"
+      tags:
+        - "Courses"
+      summary: "Read the list of courses"
+      responses:
+        "200":
+          description: "Successfully read couse list" 
+    post: 
+      operationId: "courses.create"
+      tags:
+        - Courses
+      summary: "Create a person"
+      requestBody:
+          description: "Person to create"
+          required: true
+          content:
+            application/json:
+              schema:
+                x-body-name: "course"
+                $ref: "#/components/schemas/Courses"
+      responses: 
+        "201": 
+          description: "Successfully create a Course"
+  /Courses/{name_course}: 
+    get:
+      operationId: "courses.read_one_course"
+      tags: 
+        - Courses
+      summary: "Read one course"
+      parameters: 
+        - $ref : "#/components/parameters/name_course"
+      responses: 
+        "200": 
+          description: "Successfully read a course"
+    put: 
+      tags: 
+        - Courses
+      operationId: "courses.update"
+      summary: "Update the course"
+      parameters: 
+        - $ref : "#/components/parameters/name_course"
+      responses: 
+        "200": 
+          description: "Successfully update a course"
+      requestBody:
+        content: 
+          application/json: 
+            schema: 
+              x-body-name: "course"
+              $ref: "#/components/schemas/Courses" 
+    delete: 
+      tags: 
+        - Courses
+      operationId: "courses.delete"
+      summary: "Delete the course"
+      parameters: 
+        - $ref : "#/components/parameters/name_course"
+      responses: 
+        "204": 
+          description: "Successfully deleted a course"
