@@ -1,72 +1,57 @@
 # DEMO API REST - Università degli Studi di Perugia (Unipg)
-## Sistemi Paralleli e Distribuiti 2022/2023
 
-## Endpoint `/corsi`
+## **Sistemi Paralleli e Distribuiti 2022/2023**
 
-### `GET /corsi`
+Questa demo è composta da:
 
-Restituisce la lista di tutti i corsi offerti dall'Università degli Studi di Perugia.
+- Server dell’API: server.py
+- Documentazione interattiva: documentazione.js
+- 2 Interfacce client per mostrare l’uso dell’API in un ambiente reale: index.html, client.py
 
-**Esempio di risposta:**
+# Setup:
 
-```json
-[
-    {
-        "id": 1,
-        "nome": "Informatica",
-        "dipartimento": "Matematica e informatica"
-    },
-    {
-        "id": 2,
-        "nome": "Giurisprudenza",
-        "dipartimento": "Giurisprudenza"
-    },
-    {
-        "id": 3,
-        "nome": "Ingegneria",
-        "dipartimento": "Ingegneria"
-    }
-]
+### Dipendenze:
+
+```bash
+npm install express swagger-ui-express yamljs
+pip install -r requirements.txt
 ```
 
-### `GET /corsi/{id}`
+## Server API RESTful:
 
-Dettagli singolo corso 
-**Parametri:**
-- `id` (int) - L'ID del corso
-
-**Esempio di risposta:**
-
-```json
-[
-{
-    "id": 1,
-    "nome": "Informatica",
-    "dipartimento": "Matematica e informatica"
-}
-]
+```bash
+python server.py
 ```
 
+> Nota: all’avvio verrà fornito anche un link pubblico attraverso ngrok (utile per essere condiviso con chi non riesce ad effettuare questo passaggio).
+> 
 
-### `POST /corsi`
+> Se stai utilizzando utilizzando il link che ti è stato condiviso aggiorna l’ultima riga del file **`definizione_openapi.yaml`**
+> 
 
-Crea un nuovo corso 
-**Parametri:**
-- `nome` (string) - nome del corso
-- `dipartimento` (string) - facolta del corso
-
-**Esempio di richiesta:**
-
-```json
-[
-{
-    "nome": "Economia",
-    "dipartimento": "Economia"
-}
-
-]
+```bash
+servers:
+- url: {url_qui}
 ```
 
-## Client locale
-`python client.py`
-![client](screen_client.png)
+## Documentazione interattiva:
+
+```bash
+node documentazione.js
+```
+
+Apri questo link: [http://localhost:3000/](http://localhost:3000/) 
+
+ti ritroverai davanti questa interfaccia: 
+
+![Untitled](Doc.png)
+
+# Opzionale:
+
+Se vuoi testare come le API Rest vengono utilizzate per esporre il modello dati a diverse interfacce
+
+```bash
+python client.py
+```
+
+file: index.html (doppio click)
