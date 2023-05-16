@@ -53,5 +53,6 @@ Se vuoi testare come le API Rest vengono utilizzate per esporre il modello dati 
 ```bash
 python client.py
 ```
+![Untitled](screen_client.png)
 
 file: index.html (doppio click)
