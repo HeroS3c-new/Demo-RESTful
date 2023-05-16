@@ -1,177 +1,175 @@
-openapi: 3.0.3
-info:
-  title: DEMO API Restful
-  description: |-
-   API realizzata per presentare una demo di funzionamento RESTful
-   Sistemi paralelli e distributiti (flipped lessons) anno: 2022/2023 
-  version: 1.0.0
 externalDocs:
   description: Maggiori info
   url: https://github.com/HeroS3c-new/Demo-RESTful
-servers:
-  - url: https://f411-145-224-104-33.ngrok.io/corsi
+info:
+  description: 'API realizzata per presentare una demo di funzionamento RESTful
+
+    Sistemi paralelli e distributiti (flipped lessons) anno: 2022/2023 '
+  title: DEMO API Restful
+  version: 1.0.0
+openapi: 3.0.3
 paths:
   /corsi:
     get:
-      summary: Restituisce tutti i corsi
       responses:
         '200':
-          description: Elenco dei corsi restituito con successo
           content:
             application/json:
               schema:
-                type: array
                 items:
-                  type: object
                   properties:
-                    id:
-                      type: integer
-                      description: ID del corso
-                    nome:
-                      type: string
-                      description: Nome del corso
                     dipartimento:
-                      type: string
                       description: Dipartimento del corso
+                      type: string
+                    id:
+                      description: ID del corso
+                      type: integer
+                    nome:
+                      description: Nome del corso
+                      type: string
+                  type: object
+                type: array
+          description: Elenco dei corsi restituito con successo
+      summary: Restituisce tutti i corsi
     post:
-      summary: Crea un nuovo corso
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              type: object
               properties:
-                nome:
-                  type: string
-                  description: Nome del corso
                 dipartimento:
-                  type: string
                   description: Dipartimento del corso
+                  type: string
+                nome:
+                  description: Nome del corso
+                  type: string
+              type: object
+        required: true
       responses:
         '201':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dipartimento:
+                    description: Dipartimento del corso
+                    type: string
+                  id:
+                    description: ID del corso
+                    type: integer
+                  nome:
+                    description: Nome del corso
+                    type: string
+                type: object
           description: Corso creato con successo
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    description: ID del corso
-                  nome:
-                    type: string
-                    description: Nome del corso
-                  dipartimento:
-                    type: string
-                    description: Dipartimento del corso
+      summary: Crea un nuovo corso
   /corsi/{corso_id}:
-    get:
-      summary: Restituisce un corso specifico
-      parameters:
-        - in: path
-          name: corso_id
-          required: true
-          schema:
-            type: integer
-            description: ID del corso
-      responses:
-        '200':
-          description: Corso restituito con successo
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    description: ID del corso
-                  nome:
-                    type: string
-                    description: Nome del corso
-                  dipartimento:
-                    type: string
-                    description: Dipartimento del corso
-        '404':
-          description: Corso non trovato
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  messaggio:
-                    type: string
-                    description: Messaggio di errore
-    put:
-      summary: Aggiorna un corso esistente
-      parameters:
-        - in: path
-          name: corso_id
-          required: true
-          schema:
-            type: integer
-            description: ID del corso
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                nome:
-                  type: string
-                  description: Nome del corso
-                dipartimento:
-                  type: string
-                  description: Dipartimento del corso
-      responses:
-        '200':
-          description: Corso aggiornato con successo
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    description: ID del corso
-                  nome:
-                    type: string
-                    description: Nome del corso
-                  dipartimento:
-                    type: string
-                    description: Dipartimento del corso.
-        '404':
-          description: Corso non trovato
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  messaggio:
-                    type: string
-                    description: Messaggio di errore
     delete:
-      summary: Elimina un corso esistente
       parameters:
-        - in: path
-          name: corso_id
-          required: true
-          schema:
-            type: integer
-            description: ID del corso
+      - in: path
+        name: corso_id
+        required: true
+        schema:
+          description: ID del corso
+          type: integer
       responses:
         '204':
           description: Corso eliminato con successo
         '404':
-          description: Corso non trovato
           content:
             application/json:
               schema:
-                type: object
                 properties:
                   messaggio:
-                    type: string
                     description: Messaggio di errore
-
-                            
+                    type: string
+                type: object
+          description: Corso non trovato
+      summary: Elimina un corso esistente
+    get:
+      parameters:
+      - in: path
+        name: corso_id
+        required: true
+        schema:
+          description: ID del corso
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dipartimento:
+                    description: Dipartimento del corso
+                    type: string
+                  id:
+                    description: ID del corso
+                    type: integer
+                  nome:
+                    description: Nome del corso
+                    type: string
+                type: object
+          description: Corso restituito con successo
+        '404':
+          content:
+            application/json:
+              schema:
+                properties:
+                  messaggio:
+                    description: Messaggio di errore
+                    type: string
+                type: object
+          description: Corso non trovato
+      summary: Restituisce un corso specifico
+    put:
+      parameters:
+      - in: path
+        name: corso_id
+        required: true
+        schema:
+          description: ID del corso
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                dipartimento:
+                  description: Dipartimento del corso
+                  type: string
+                nome:
+                  description: Nome del corso
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dipartimento:
+                    description: Dipartimento del corso.
+                    type: string
+                  id:
+                    description: ID del corso
+                    type: integer
+                  nome:
+                    description: Nome del corso
+                    type: string
+                type: object
+          description: Corso aggiornato con successo
+        '404':
+          content:
+            application/json:
+              schema:
+                properties:
+                  messaggio:
+                    description: Messaggio di errore
+                    type: string
+                type: object
+          description: Corso non trovato
+      summary: Aggiorna un corso esistente
+servers:
+- url: http://localhost:5000
