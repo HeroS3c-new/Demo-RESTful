@@ -77,14 +77,17 @@ python server.py
 > Nota: all’avvio verrà fornito anche un link pubblico attraverso ngrok (utile per essere condiviso con chi non riesce ad effettuare questo passaggio).
 > 
 
-> Se stai utilizzando utilizzando il link che ti è stato condiviso aggiorna l’ultima riga del file **`definizione_openapi.yaml`**
+> Se stai utilizzando utilizzando un link che ti è stato condiviso aggiorna l’ultima riga del file **`definizione_openapi.yaml`**
 > 
 
-```bash
+```yaml
 servers:
 - url: {url_qui}
 ```
-
+e decommenta questa riga nel file **`server.py`**
+```python
+#update_openapi_file('definizione_openapi.yaml', public_url)
+```
 ## Documentazione interattiva:
 
 ```bash
