@@ -12,22 +12,30 @@ Questa demo è composta da:
 ### Prerequisiti:
 È necessario avere installati Node.js, Python e i relativi gestori dei pacchetti (npm, pip).
 
-#### GNU/Linux:
+### GNU/Linux:
 
-1.  **Node.js**:
-    
-    *   Apri il terminale.
-    *   Utilizza il gestore dei pacchetti della tua distribuzione Linux per installare Node.js. Ad esempio, su Ubuntu, puoi usare il comando `sudo apt install nodejs`.
-2.  **Python**:
-    
-    *   Apri il terminale.
-    *   Utilizza il gestore dei pacchetti della tua distribuzione Linux per installare Python. Ad esempio, su Ubuntu, puoi usare il comando `sudo apt install python3`.
-3.  **Gestori dei pacchetti**:
-    
-    *   Per installare npm (gestore dei pacchetti per Node.js), puoi utilizzare il comando `sudo apt install npm`.
-    *   Per installare pip (gestore dei pacchetti per Python), puoi utilizzare il comando `sudo apt install python3-pip`.
+#### Ubuntu / Debian:
 
-#### Windows:
+*   Node.js: `sudo apt install nodejs`
+*   Python: `sudo apt install python3`
+*   npm: `sudo apt install npm`
+*   pip: `sudo apt install python3-pip`
+
+#### Fedora / CentOS:
+
+*   Node.js: `sudo dnf install nodejs`
+*   Python: `sudo dnf install python3`
+*   npm: `sudo dnf install npm`
+*   pip: `sudo dnf install python3-pip`
+
+#### Arch Linux:
+
+*   Node.js: `sudo pacman -S nodejs`
+*   Python: `sudo pacman -S python`
+*   npm: `sudo pacman -S npm`
+*   pip: `sudo pacman -S python-pip`
+
+### Windows:
 
 1.  **Node.js**:
     
@@ -44,7 +52,7 @@ Questa demo è composta da:
     *   npm (già incluso nell'installazione di Node.js) viene installato automaticamente durante l'installazione di Node.js su Windows.
     *   pip viene installato automaticamente insieme a Python durante l'installazione su Windows.
 
-#### Mac:
+### Mac:
 
 1.  **Node.js**:
     
