@@ -18,8 +18,8 @@ COPY server.py /app/server.py
 # Installa le dipendenze necessarie per il file server.py
 RUN pip install flask flask_cors pyngrok
 
-# Esponi la porta 3000 per il server Express
-EXPOSE 3000
+# Esponi la porta 80 per il server Express
+EXPOSE 80
 
 # Esegui il server Express e il server Flask
 CMD ["node", "documentazione.js"]
