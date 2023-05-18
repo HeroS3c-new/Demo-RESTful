@@ -4,8 +4,7 @@ import requests
 
 API_URL = 'http://localhost:5000'
 
-
-
+# Funzione per gestire l'errore di connessione al server
 def connection_error():
     root = tk.Tk()
     root.title('Errore')
@@ -13,7 +12,8 @@ def connection_error():
     tk.Label(root, text='Server non attivo', font=font.Font(size=12)).pack()
     tk.Frame(root).pack()
     root.mainloop()
-    
+
+# Ottieni la lista dei corsi dal server
 def get_corsi():
     corsi = []
     try:
@@ -23,12 +23,14 @@ def get_corsi():
         connection_error()
     return corsi
 
+# Popola la lista dei corsi nella Listbox
 def populate_corsi_listbox(corsi_listbox):
     corsi_listbox.delete(0, tk.END)
     corsi = get_corsi()
     for corso in corsi:
         corsi_listbox.insert(tk.END, f"{corso['id']} - {corso['nome']} ({corso['dipartimento']})")
 
+# Crea un nuovo corso inviando una richiesta POST al server
 def create_corso(nome, dipartimento):
     try:
         nuovo_corso = {'nome': nome, 'dipartimento': dipartimento}
@@ -37,6 +39,7 @@ def create_corso(nome, dipartimento):
         connection_error()
     return response.json()
 
+# Elimina un corso inviando una richiesta DELETE al server
 def delete_corso(corso_id, corsi_listbox):
     try:
         response = requests.delete(f'{API_URL}/corsi/{corso_id.get()}')
@@ -45,12 +48,14 @@ def delete_corso(corso_id, corsi_listbox):
         connection_error()
     return response.status_code
 
+# Gestisci l'evento di click sul pulsante "Crea corso"
 def on_create_corso_button_click(nome_entry, dipartimento_entry, corsi_listbox):
     nome = nome_entry.get()
     dipartimento = dipartimento_entry.get()
     create_corso(nome, dipartimento)
     populate_corsi_listbox(corsi_listbox)
 
+# Crea l'interfaccia grafica
 def create_gui():
     root = tk.Tk()
     root.title('API REST - Università degli Studi di Perugia (Unipg)')
