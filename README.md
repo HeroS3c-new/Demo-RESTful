@@ -112,4 +112,4 @@ python client.py
 ![Untitled](screen_client.png)
 
 ### Client web
-file: index.html (doppio click)
+[file: index.html (doppio click)](https://stirring-unicorn-bd7a56.netlify.app/)
