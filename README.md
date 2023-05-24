@@ -113,3 +113,15 @@ python client.py
 
 ### Client web
 [file: index.html (doppio click)](https://stirring-unicorn-bd7a56.netlify.app/)
+
+### Contact: 
+   Per maggiori informazioni o problemi contattateci a questi indirizzi:
+ 
+    - federicorossetti0601@gmail.com
+    - riccardo.cristofani@studenti.unipg.it
+    - FilippoLeonardo.niculae@studenti.unipg.it
+    - gabriele.fossatelli@studenti.unipg.it
+    - Loris.simonetti@studenti.unipg.it
+    - sara.castellini@studenti.unipg.it
+    - manuel.rovitti@studenti.unipg.it
+    
